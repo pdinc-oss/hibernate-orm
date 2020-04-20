@@ -74,6 +74,17 @@ public class PropertyBinder {
 	private EntityBinder entityBinder;
 	private boolean isXToMany;
 	private String referencedEntityName;
+	private Boolean optional;
+
+	public Boolean isOptional()
+	{
+		return optional;
+	}
+
+	public void setOptional(Boolean optional)
+	{
+		this.optional = optional;
+	}
 
 	public void setReferencedEntityName(String referencedEntityName) {
 		this.referencedEntityName = referencedEntityName;
@@ -328,6 +339,12 @@ public class PropertyBinder {
 
 		LOG.tracev( "Cascading {0} with {1}", name, cascade );
 		this.mappingProperty = prop;
+
+		if (optional != null)
+		{
+		    prop.setOptional(optional);
+		}
+
 		return prop;
 	}
 

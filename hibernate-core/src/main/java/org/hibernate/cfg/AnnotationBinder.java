@@ -3240,6 +3240,7 @@ public final class AnnotationBinder {
 		}
 		else {
 			//has a FK on the table
+			propertyBinder.setOptional(optional);
 			bindManyToOne(
 					cascadeStrategy, joinColumns, optional, ignoreNotFound, cascadeOnDelete,
 					targetEntity,
