@@ -36,6 +36,10 @@ public class RowVersionType
 		super( VarbinaryTypeDescriptor.INSTANCE, RowVersionTypeDescriptor.INSTANCE );
 	}
 
+	protected RowVersionType(VarbinaryTypeDescriptor sqlTypeDescriptor, RowVersionTypeDescriptor javaTypeDescriptor) {
+		super( sqlTypeDescriptor, javaTypeDescriptor );
+	}
+
 	@Override
 	public String[] getRegistrationKeys() {
 		return new String[] { getName() };

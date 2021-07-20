@@ -1012,6 +1012,7 @@ public class HqlSqlWalker extends HqlSqlBaseWalker implements ErrorReporter, Par
 	}
 
 	private boolean isDatabaseGeneratedTimestamp(Type type) {
+		// TODO: HHH-14736 ?
 		// currently only the Hibernate-supplied DbTimestampType is supported here
 		return DbTimestampType.class.isAssignableFrom( type.getClass() );
 	}

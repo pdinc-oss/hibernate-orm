@@ -18,9 +18,14 @@ public enum SourceType {
 	VM( "timestamp" ),
 
 	/**
+	 * Get the binary, non-timestamp from the database.
+	 */
+	DBBINARY("dbbinary"),
+
+	/**
 	 * Get the timestamp from the database.
 	 */
-	DB( "dbtimestamp" );
+	DB("dbtimestamp");
 
 	private final String typeName;
 
