@@ -168,8 +168,7 @@ public class OptimisticLockHHH14736Test extends BaseCoreFunctionalTestCase {
 
 		@Version
 		@Source(value = SourceType.DBBINARY)
-		@ColumnTransformer(read = "CAST(version as BIGINT)")
-		@Column(insertable = false, updatable = false, columnDefinition = "timestamp not null") //
+		@Column(columnDefinition = "timestamp not null")
 		@Generated(GenerationTime.ALWAYS)
 		private byte[] version;
 
