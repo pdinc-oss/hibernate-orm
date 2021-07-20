@@ -24,10 +24,9 @@ import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.Source;
 import org.hibernate.annotations.SourceType;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
 import org.hibernate.dialect.CockroachDB192Dialect;
 import org.hibernate.dialect.SQLServerDialect;
+import org.hibernate.testing.RequiresDialect;
 import org.hibernate.testing.junit4.BaseCoreFunctionalTestCase;
 import org.junit.Test;
 
@@ -36,10 +35,7 @@ import org.junit.Test;
  *
  * @author Jason Pyeron
  */
-// @RequiresDialectFeature(
-// value = DialectChecks.DoesRepeatableReadNotCauseReadersToBlockWritersCheck.class,
-// comment = "potential deadlock"
-// )
+@RequiresDialect(SQLServerDialect.class)
 public class OptimisticLockHHH14736Test extends BaseCoreFunctionalTestCase {
 
 	@Test
